@@ -1,10 +1,36 @@
-- 👋 Hi, I’m @jhansi2706
-- 👀 I’m interested in ...
-- 🌱 I’m currently learning ...
-- 💞️ I’m looking to collaborate on ...
-- 📫 How to reach me ...
+/*....program for wearable human health monitoring....*/
 
-<!---
-jhansi2706/jhansi2706 is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
-You can click the Preview link to take a look at your changes.
---->
+float temperature;
+int temperaturepin=2;
+float bloodpressure;
+int bloodpressurepin=8;
+float pulseratepin=4;
+int pulseratepin=4;
+float breathingrate;
+int breathingratepin=5;
+int buzzerpin=13;
+void setup()
+{
+  pin Mode(temperaturepin,INPUT);//pin for temperature sensor
+  pin Mode(bloodpressurepin,INPUT);//pin for blood pressure sensor
+  pin Mode(pulseratepin,INPUT);//pin for pulse sensor
+  pin Mode(breathingratepin, INPUT);//pin for breathing sensor
+  pin Mode(buzzerpin, OUTPUT);//pin for piezo buzzer
+ }
+   
+   void loop()
+   {
+     temperature=analog Read(temperature pin);
+     blood pressure=analog Read(bloodpressurepin);
+     pulse rate=analog Read(pulseratepin);
+     breathing rate=analog Read(breathingratepin);
+     
+     if(temperature<=98.5 && bloodpressure<120 && pulserate>60 && breathingrate>12)
+     {
+       digital Write(13,M1GH);//alert sound from piezo buzzer
+     }
+     else
+     {
+       digital Write(13,Low);//no sound from piezo buzzer
+     }
+    } 
