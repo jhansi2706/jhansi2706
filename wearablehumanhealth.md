@@ -3,8 +3,8 @@
 float temperature;
 int temperaturepin=2;
 float bloodpressure;
-int bloodpressurepin=8;
-float pulseratepin=4;
+int bloodpressurepin=3;
+float pulseratepin;
 int pulseratepin=4;
 float breathingrate;
 int breathingratepin=5;
@@ -20,10 +20,10 @@ void setup()
    
    void loop()
    {
-     temperature=analog Read(temperature pin);
-     bloodpressure=analog Read(bloodpressurepin);
-     pulserate=analog Read(pulseratepin);
-     breathingrate=analog Read(breathingratepin);
+     temperature=analogRead(temperature pin);
+     bloodpressure=analogRead(bloodpressurepin);
+     pulserate=analogRead(pulseratepin);
+     breathingrate=analogRead(breathingratepin);
      
      if(temperature<=98.5 && bloodpressure<120 && pulserate>60 && breathingrate>12)
      {
